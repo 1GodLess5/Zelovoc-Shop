@@ -51,6 +51,7 @@ def itemsPrice(shoppingCart):
     for i in shoppingCart:
         countingItems[i] = shoppingCart.count(i)
     # musis vymyslet kam v programu prcnes itemsPrice(), protoze jako dictionary musi byt zaplneny, jinak hazi error :)
+    # pak uz by to melo byt snad v cajku, uvidime -> tohle pisu proto, ze potrebuju udelat push na git :D
     # print("You bought: ")
     # for i in range(numberOfProducts):
 
