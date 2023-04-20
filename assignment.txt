@@ -1,0 +1,34 @@
+Spravme si malý program, ktorý nazveme Zelovoc (alebo akýkoľvek iný obchod). Na konci tohto článku môžeš nájsť malé hinty ako na to.
+Obchod by mal spĺňať nasledovné požiadavky:
+
+    Produkt je iba obyčajný reťazec – slovo (napr. „jablko“).
+    Naše produkty potrebujeme niekde uložiť (napr. do listu).
+
+    Naše produkty chceme nejakým spôsobom ukázať používateľovi. Vypísať pri nich chceme ich poradie, názov a cenu produktu. Poradie nech nám začína od 1, nie od 0.
+
+    Po vypísaní produktov používateľovi chceme dať možnosť si nejaký produkt kúpiť. To môžeš spraviť tak, že si od neho vypýtaš číslo,
+    ktoré bude označovať poradie produktu, ktorý si chce kúpiť.
+
+    Keď si používateľ kúpi produkt, tak ho niekam treba uložiť (napr. do listu, ktorý sa bude volať shopping_cart).
+    
+    Po kúpe produktu chceme znova vypísať produkty a znova umožniť nákup (kedy program končí je popísané nižšie).
+    
+    K vypisovaniu produktov pridaj aj vypísanie používateľovho košíka. Produkty v košíku stačí vypísať za sebou. Na koniec mu tam ešte napíš aktuálnu cenu košíka.
+    Ak používateľ pri voľbe produktu zadá číslo 0, tak to znamená, že si nákup želá ukončiť. Túto možnosť mu napíš pod zoznam produktov, nech vie,
+    ako má nákup ukončiť.
+    Po ukončení nákupu mu napíš, aké produkty si kúpil a koľko za ne má zaplatiť.
+    Na záver sa mu nezabudni aj poďakovať.
+
+Bonus 1
+Ako bonus si môžeš kód trochu upraviť. Vo svete programátora nestačí, že kód funguje. Kód sa má dať aj dobre čítať a jednoducho upravovať:
+
+    Sprav si funkciu na výpočet ceny produktu, nech nemusíš vkuse volať len()
+    Sprav si funkciu na výpis všetkých produktov
+    Sprav si funkciu na výpis košíka
+    Sprav si funkciu na získanie produktu od používateľa
+
+Bonus 2
+Vylepši tvoj obchod tak, aby vedel mať viacero kusov daného produktu. Zákazníkovi ponúkaj produkt až pokým je dostupný aspoň 1 kus
+Bonus 3
+Podobným spôsobom akým sa v BONUSE 2 robí počet produktov, skús upraviť cenu produktov. To znamená, že cena už nebude dĺžka mena produktu,
+ale bude určená a niekde uložená.
