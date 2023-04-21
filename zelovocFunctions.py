@@ -1,4 +1,5 @@
 import random
+import os
 
 # function for getting how many items are in shop
 def numOfItems(itemsDictionary):
@@ -87,7 +88,7 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
 
         # checking if the number exists in our dictionary, calculating the price
         if usersChoice == 0:
-            #musim dodelat funkci pro exit z kodu pryc
+            endOfTheProgram(shoppingCart, itemsDictionary)
             exit("\n\n\nThanks for using my Zelovoc shop <3")
         elif usersChoice > 0 and usersChoice <= itemsCount:
 
@@ -116,3 +117,21 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
             print("Enter a valid choice!")
 
     return shoppingCart, usersBalance
+
+def endOfTheProgram(shoppingCart, itemsDictionary):
+    os.system('clear')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
