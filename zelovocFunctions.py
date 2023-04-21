@@ -42,23 +42,28 @@ def itemsPrint(itemsDictionary, itemsQuantity):
     print("If you wish to stop buying and want to proccess to checkout press \"0\".")
 
 
+# counting price of what user buys
+def itemsPrice(shoppingCart, itemsDictionary):
+    listOfPrices = []
 
-def itemsPrice(shoppingCart):
-    numberOfProducts = numOfItems(shoppingCart)
+    for item in shoppingCart:
+        listOfPrices.append(itemsDictionary.get(item))
 
+    finalPrice = sum(listOfPrices)
+    return finalPrice
+
+#printing out users items from cart
+def shoppingCartPrint(shoppingCart):
     countingItems = {}
 
-    for i in shoppingCart:
-        countingItems[i] = shoppingCart.count(i)
-    # musis vymyslet kam v programu prcnes itemsPrice(), protoze jako dictionary musi byt zaplneny, jinak hazi error :)
-    # pak uz by to melo byt snad v cajku, uvidime -> tohle pisu proto, ze potrebuju udelat push na git :D
-    # print("You bought: ")
-    # for i in range(numberOfProducts):
+    for item in shoppingCart:
+        countingItems[item] = shoppingCart.count(item)
 
-    # tady budes pocitat kolik stoji nakup uzivatele pomoci jmen z dictionary itemsDictionary {}
-    # print ovoce * 3
-    #print celkova cena nakupu
+    print("Your shopping cart:", end=" ")
+    for item in countingItems:
+        print(item + " * " + str(countingItems[item]), end=", ")
 
+    print("")
 
 
 # printing usersBalance and asking what user wants to buy
@@ -66,6 +71,8 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
     wrongInput = 1
 
     print("\nYour balance is: " + str(usersBalance))
+    priceOfItems = itemsPrice(shoppingCart, itemsDictionary)
+    shoppingCartPrint(shoppingCart)
 
     while wrongInput == 1:
         dictionaryCounter = 0
@@ -91,7 +98,7 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
                             # items quantity descending
                             itemsQuantity[dictionaryCounter] -= 1
                             # appends name of product to the shopping cart
-                            shoppingCart.append(itemsDictionary)
+                            shoppingCart.append(product)
                             #lowers usersBalance based on what he bought
                             usersBalance -= itemsDictionary[product]
                             wrongInput = 0
