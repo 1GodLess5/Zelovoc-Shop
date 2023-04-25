@@ -1,7 +1,10 @@
 import random
 import os
 
-# function for getting how many items are in shop
+import zelovocComponents
+
+
+# function to get how many items are in shop
 def numOfItems(itemsDictionary):
     itemsNumber = len(itemsDictionary)
 
@@ -72,7 +75,7 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
     wrongInput = 1
 
     print("\nYour balance is: " + str(usersBalance))
-    priceOfItems = itemsPrice(shoppingCart, itemsDictionary)
+    # priceOfItems = itemsPrice(shoppingCart, itemsDictionary)
     shoppingCartPrint(shoppingCart)
 
     while wrongInput == 1:
@@ -92,6 +95,8 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
             exit("\n\n\nThanks for using my Zelovoc shop <3")
         elif usersChoice > 0 and usersChoice <= itemsCount:
 
+        # mel bys kouknout jeste na tyhle ify a popremyslet, jestli to nejde nejak zjednodusit treba pomoci .get
+        # needs to be refactored yet
             for product in itemsDictionary:
                 if dictionaryCounter == usersChoice - 1:
                     if itemsQuantity[dictionaryCounter] != 0:
@@ -118,9 +123,21 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
 
     return shoppingCart, usersBalance
 
+# function which prints the receipt and ends the shop
 def endOfTheProgram(shoppingCart, itemsDictionary):
+    # this command doesn't work when executed through Pycharm, but works when executing in terminal
     os.system('clear')
+    print(zelovocComponents.color.BOLD + "\t\t\tSHOP RECEIPT" + zelovocComponents.color.END)
 
+    for i in range(62):
+        print("=", end="")
+    print("")
+    print("\t\t\tNr.: " + str(random.randint(1, 1000000)).zfill(7))
+    for i in range(62):
+        print("=", end="")
+    print("")
+
+    print("{:<17} {:<17} {:<17} {:<13}".format("CODE|", "QTY|", "PRODUCT NAME|", "PRICE/€"))
 
 
 

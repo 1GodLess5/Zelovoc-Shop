@@ -1,8 +1,17 @@
-lst = ["pepa", "banán", "banán", 4, 5, 2, 2, "pepa", 5, "pomelo", 5, 5, 6]
+import zelovocComponents
+import os
+import random
 
-count = {}
+os.system('clear')
+print(zelovocComponents.color.BOLD + "\t\t\tSHOP RECEIPT" + zelovocComponents.color.END)
 
-for item in lst:
-    count[item] = lst.count(item)
+for i in range(62):
+   print("=", end="")
+print("")
+print("\t\t\tNr.: " + str(random.randint(1, 1000000)).zfill(7))
+for i in range(62):
+   print("=", end="")
+print("")
 
-print(count)
+print("{:<17} {:<17} {:<17} {:<13}".format("CODE|", "QTY|", "PRODUCT NAME|", "PRICE/€"))
+
