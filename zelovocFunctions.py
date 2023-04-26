@@ -56,16 +56,21 @@ def itemsPrice(shoppingCart, itemsDictionary):
     finalPrice = sum(listOfPrices)
     return finalPrice
 
-#printing out users items from cart
-def shoppingCartPrint(shoppingCart):
+# counting users items
+def countingUserItems(shoppingCart):
     countingItems = {}
 
     for item in shoppingCart:
         countingItems[item] = shoppingCart.count(item)
 
+    return countingItems
+
+# printing out counted items
+def printingCountedItems(countedItems):
     print("Your shopping cart:", end=" ")
-    for item in countingItems:
-        print(item + " * " + str(countingItems[item]), end=", ")
+
+    for item in countedItems:
+        print(item + " * " + str(countedItems[item]), end=", ")
 
     print("")
 
@@ -76,7 +81,8 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
 
     print("\nYour balance is: " + str(usersBalance))
     # priceOfItems = itemsPrice(shoppingCart, itemsDictionary)
-    shoppingCartPrint(shoppingCart)
+    countedItems = countingUserItems(shoppingCart)
+    printingCountedItems(countedItems)
 
     while wrongInput == 1:
         dictionaryCounter = 0
@@ -139,8 +145,17 @@ def endOfTheProgram(shoppingCart, itemsDictionary):
 
     print("{:<17} {:<17} {:<17} {:<13}".format("CODE|", "QTY|", "PRODUCT NAME|", "PRICE/€"))
 
+    for i in range(62):
+        print("-", end="")
+    print("")
 
+    #quantity of products
+    quantityDictionary = countingUserItems(shoppingCart)
 
+    for product in quantityDictionary:
+        # products codes
+        productCode = random.randint(1, 999)
+        print("{:<17} {:<17} {:<17} {:<13}".format(str(productCode).zfill(4), str(quantityDictionary[product]), product, str(itemsDictionary.get(product) * quantityDictionary[product]) + "€"))
 
 
 
