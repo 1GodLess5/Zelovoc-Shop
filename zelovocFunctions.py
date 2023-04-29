@@ -1,6 +1,6 @@
 import random
 import os
-
+import datetime
 import zelovocComponents
 
 
@@ -98,7 +98,10 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
         # checking if the number exists in our dictionary, calculating the price
         if usersChoice == 0:
             endOfTheProgram(shoppingCart, itemsDictionary)
-            exit("\n\n\nThanks for using my Zelovoc shop <3")
+
+            print(zelovocComponents.color.BOLD + zelovocComponents.color.UNDERLINE + zelovocComponents.color.CYAN)
+            exit("Thanks for using my Zelovoc shop <3")
+            print(zelovocComponents.color.END)
         elif usersChoice > 0 and usersChoice <= itemsCount:
 
         # mel bys kouknout jeste na tyhle ify a popremyslet, jestli to nejde nejak zjednodusit treba pomoci .get
@@ -131,6 +134,8 @@ def userShopping(shoppingCart, itemsDictionary, usersBalance, itemsQuantity, ite
 
 # function which prints the receipt and ends the shop
 def endOfTheProgram(shoppingCart, itemsDictionary):
+    totalPrice = 0
+
     # this command doesn't work when executed through Pycharm, but works when executing in terminal
     os.system('clear')
     print(zelovocComponents.color.BOLD + "\t\t\tSHOP RECEIPT" + zelovocComponents.color.END)
@@ -155,15 +160,20 @@ def endOfTheProgram(shoppingCart, itemsDictionary):
     for product in quantityDictionary:
         # products codes
         productCode = random.randint(1, 999)
-        print("{:<17} {:<17} {:<17} {:<13}".format(str(productCode).zfill(4), str(quantityDictionary[product]), product, str(itemsDictionary.get(product) * quantityDictionary[product]) + "€"))
+        quantity = quantityDictionary[product]
+        price = itemsDictionary.get(product) * quantityDictionary[product]
 
+        print("{:<17} {:<17} {:<17} {:<13}".format(str(productCode).zfill(4), str(quantity), product, str(price) + "€"))
 
+        totalPrice += price
 
+    for i in range(62):
+        print("-", end="")
+    print("")
 
-
-
-
-
-
-
-
+    today = datetime.date.today()
+    timeNow = datetime.datetime.now()
+    print("{:<50} {:<15}".format("Date: " + today.strftime("%b/%d/%Y"), "TOTAL: " + str(totalPrice) + " €"))
+    print("Time: " + timeNow.strftime("%H:%M:%S"))
+    for i in range(62):
+        print("-", end="")
