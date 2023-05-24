@@ -2,7 +2,26 @@ import random
 import os
 import datetime
 import zelovocComponents
+import sys
 
+def strToClass(str):
+    return getattr(sys.modules[__name__], str)
+
+
+def addingNewItems(itemsNames: list, itemsPrices: list, itemsNamesList: list):
+    counter = 0
+
+    if(len(itemsNames) != len(itemsPrices)):
+        print("Add price for each product!")
+    else:
+        for name in itemsNames:
+            if name not in itemsNamesList:
+                name = zelovocComponents.Item(name, itemsPrices[counter])
+                name.addItem(zelovocComponents.itemsNamesList)
+                counter += 1
+            
+    
+        
 
 # function to get how many items are in shop
 def numOfItems(itemsDictionary):

@@ -1,34 +1,34 @@
 import zelovocFunctions
 
 class Item:
-    def __init__(self, itemsName, itemsPrice):
-        self.itemsName = itemsName
-        self.itemsPrice = itemsPrice
+    def __init__(self, itemName: str, itemPrice: float):
+        self.itemName = itemName
+        self.itemPrice = itemPrice
 
-        itemsDictionary[itemsName] = itemsPrice
+    def nameOfItem(self):
+        return self.itemName
+    
+    def priceOfItem(self):
+        return self.priceOfItem
+    
+    def addItem(self, itemsList):
+        itemsList.append(self.itemName)
+        return itemsList
 
+# # items from shop
+itemsNamesList = []
+itemsNames = ["apple", "orange", "mandarin", "mango", "pineapple", "banana", "pear", "nectarine", "plum"]
+itemsPrices = [5, 5, 5, 6, 6, 6, 7, 7, 7]
+zelovocFunctions.addingNewItems(itemsNames, itemsPrices, itemsNamesList)
 
+print(orange.nameOfItem())
+# # checking number of items in our shop to generate quantity of items
+# itemsCount = zelovocFunctions.numOfItems(itemsDictionary)
+# # shop items quantity
+# itemsQuantity = zelovocFunctions.itemsGenerator(itemsCount)
 
-# items from shop
-itemsDictionary = {
-    "apple" : 5,
-    "orange" : 5,
-    "mandarin" : 5,
-    "mango" : 6,
-    "pineapple" : 6,
-    "banana" : 6,
-    "pear" : 7,
-    "nectarine" : 7,
-    "plum" : 7
-}
-
-# checking number of items in our shop to generate quantity of items
-itemsCount = zelovocFunctions.numOfItems(itemsDictionary)
-# shop items quantity
-itemsQuantity = zelovocFunctions.itemsGenerator(itemsCount)
-
-# users shopping cart
-shoppingCart = []
+# # users shopping cart
+# shoppingCart = []
 
 # formating output
 class color:
