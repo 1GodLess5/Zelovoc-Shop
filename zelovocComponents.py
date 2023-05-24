@@ -1,5 +1,14 @@
 import zelovocFunctions
 
+class Item:
+    def __init__(self, itemsName, itemsPrice):
+        self.itemsName = itemsName
+        self.itemsPrice = itemsPrice
+
+        itemsDictionary[itemsName] = itemsPrice
+
+
+
 # items from shop
 itemsDictionary = {
     "apple" : 5,
