@@ -15,17 +15,12 @@ class Item:
         itemsList.append(self.itemName)
         return itemsList
 
-# # items from shop
-itemsNamesList = []
-itemsNames = ["apple", "orange", "mandarin", "mango", "pineapple", "banana", "pear", "nectarine", "plum"]
-itemsPrices = [5, 5, 5, 6, 6, 6, 7, 7, 7]
-zelovocFunctions.addingNewItems(itemsNames, itemsPrices, itemsNamesList)
-
-print(orange.nameOfItem())
-# # checking number of items in our shop to generate quantity of items
-# itemsCount = zelovocFunctions.numOfItems(itemsDictionary)
-# # shop items quantity
-# itemsQuantity = zelovocFunctions.itemsGenerator(itemsCount)
+            return itemsDictionary
+        else:
+            print(color.BOLD + color.RED + "This product is already in shop's sortiment!" + color.END)
+    
+    def newFunction():
+        pass
 
 # # users shopping cart
 # shoppingCart = []
