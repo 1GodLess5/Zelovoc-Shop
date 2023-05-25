@@ -1,32 +1,46 @@
 import zelovocFunctions
 
 class Item:
-    def __init__(self, itemName: str, itemPrice: float):
-        self.itemName = itemName
-        self.itemPrice = itemPrice
+    def __init__(self, itemsName, itemsPrice):
+        self.itemsName = itemsName
+        self.itemsPrice = itemsPrice
+        
 
-    def nameOfItem(self):
-        return self.itemName
-    
-    def priceOfItem(self):
-        return self.priceOfItem
-    
-    def addItem(self, itemsList):
-        itemsList.append(self.itemName)
-        return itemsList
+    def addToDictionary(self, itemsDictionary: dict):
+        if self.itemsName not in itemsDictionary:
+            itemsDictionary[self.itemsName] = self.itemsPrice
+
+            print("New item: " + self.itemsName + " was succesfully added.")
 
             return itemsDictionary
         else:
             print(color.BOLD + color.RED + "This product is already in shop's sortiment!" + color.END)
-    
-    def newFunction():
-        pass
 
-# # users shopping cart
-# shoppingCart = []
+
+# items from shop
+itemsDictionary = {
+    "apple" : 5,
+    "orange" : 5,
+    "mandarin" : 5,
+    "mango" : 6,
+    "pineapple" : 6,
+    "banana" : 6,
+    "pear" : 7,
+    "nectarine" : 7,
+    "plum" : 7
+}
+
+# checking number of items in our shop to generate quantity of items
+itemsCount = zelovocFunctions.numOfItems(itemsDictionary)
+# shop items quantity
+itemsQuantity = zelovocFunctions.itemsGenerator(itemsCount)
+
+# users shopping cart
+shoppingCart = []
 
 # formating output
 class color:
+   RED = '\033[91m'
    CYAN = '\033[96m'
    BOLD = '\033[1m'
    UNDERLINE = '\033[4m'
