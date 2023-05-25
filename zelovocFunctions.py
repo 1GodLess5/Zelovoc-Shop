@@ -2,22 +2,19 @@ import random
 import os
 import datetime
 import zelovocComponents
-import sys
 
-def strToClass(str):
-    return getattr(sys.modules[__name__], str)
-
-
-def addingNewItems(itemsNames: list, itemsPrices: list, itemsNamesList: list):
+def addingNewItems(itemsNames: list, itemsPrices: list, itemsDictionary: dict):
     counter = 0
 
     if(len(itemsNames) != len(itemsPrices)):
-        print("Add price for each product!")
+        print("The number of product isnt equal to number of prices!")
     else:
         for name in itemsNames:
-            if name not in itemsNamesList:
-                name = zelovocComponents.Item(name, itemsPrices[counter])
-                name.addItem(zelovocComponents.itemsNamesList)
+            if name not in itemsDictionary:
+                # YOU HAVE TO REWORK THIS FOR DICTIONARY.
+                
+                # name = zelovocComponents.Item(name, itemsPrices[counter])
+                # name.addItem(zelovocComponents.itemsNamesList)
                 counter += 1
             
     
